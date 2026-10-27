@@ -1,0 +1,5 @@
+session_good_answers = 3
+sessions_to_acquire = 2
+max_cards_per_session = 15
+new_per_session = 5
+retry_offset = 3
