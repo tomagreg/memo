@@ -134,3 +134,12 @@ def test_abbreviation_convention():
     from engine import is_abbreviation
     assert is_abbreviation("cefi2.p1-couts.abbr-cv")
     assert not is_abbreviation("cefi2.rappels.bfr-definition")
+
+
+def test_select_acquired_takes_all_and_only_acquired():
+    import random
+    from engine import select_acquired
+    cards = [{"id": f"a{i}", "status": "acquise", "misses": 0} for i in range(20)]
+    cards += [{"id": "n", "status": "nouvelle", "misses": 0}, {"id": "v", "status": "validee", "misses": 0}]
+    ids = select_acquired(cards, random.Random(1))
+    assert sorted(ids) == sorted(f"a{i}" for i in range(20))

@@ -88,6 +88,7 @@ def api_start():
     chapters = body.get("chapters") or []
     include_acquired = bool(body.get("include_acquired"))
     only_abbreviations = bool(body.get("only_abbreviations"))
+    review_acquired = bool(body.get("review_acquired"))
     if not isinstance(chapters, list) or not all(isinstance(c, str) for c in chapters):
         return error("chapters doit être une liste de chaînes")
     conn = get_conn()
@@ -98,7 +99,11 @@ def api_start():
             states = [c for c in states if c["chapter"] in chapters]
         if only_abbreviations:
             states = [c for c in states if engine.is_abbreviation(c["id"])]
-        ids = engine.select_cards(states, CFG, include_acquired, random.Random())
+        if review_acquired:
+            include_acquired = True
+            ids = engine.select_acquired(states, random.Random())
+        else:
+            ids = engine.select_cards(states, CFG, include_acquired, random.Random())
         if not ids:
             conn.execute("ROLLBACK")
             return error("aucune carte à réviser avec ces critères", 409)

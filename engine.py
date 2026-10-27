@@ -91,6 +91,13 @@ def select_cards(cards_with_status, cfg, include_acquired, rng):
     return chosen
 
 
+def select_acquired(cards_with_status, rng):
+    """Révision d'un chapitre : toutes les cartes acquises, sans plafond ni ratios, dans un ordre aléatoire."""
+    ids = [c["id"] for c in cards_with_status if c["status"] == ACQUIRED]
+    rng.shuffle(ids)
+    return ids
+
+
 def new_queue(card_ids, easy_ids=()):
     """easy_ids : cartes déjà validées, qui n'ont besoin que d'une bonne réponse si réussies du premier coup."""
     ids = list(card_ids)

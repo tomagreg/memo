@@ -14,7 +14,7 @@ Vue.createApp({
   template: '#tpl',
   data: () => ({
     screen: 'home', home: null, session: null, summary: null, flipped: false, busy: false, error: '',
-    chosen: [], includeAcquired: false, onlyAbbreviations: false,
+    chosen: [], includeAcquired: false, onlyAbbreviations: false, reviewAcquired: false,
     statuses: [
       {key: 'acquise', label: 'acquises', color: 'var(--acq)'},
       {key: 'validee', label: 'validées', color: 'var(--valid)'},
@@ -43,7 +43,7 @@ Vue.createApp({
     async start() {
       await this.guard(async () => {
         this.session = await api('/api/sessions', {chapters: this.chosen, include_acquired: this.includeAcquired,
-          only_abbreviations: this.onlyAbbreviations});
+          only_abbreviations: this.onlyAbbreviations, review_acquired: this.reviewAcquired});
         await this.enter();
       });
     },
