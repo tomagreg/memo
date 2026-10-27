@@ -10,11 +10,16 @@ async function api(path, opts) {
   return data;
 }
 
+function isDark() {
+  const t = document.documentElement.dataset.theme;
+  return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
 Vue.createApp({
   template: '#tpl',
   data: () => ({
     screen: 'home', home: null, session: null, summary: null, flipped: false, busy: false, error: '',
-    chosen: [], includeAcquired: false, onlyAbbreviations: false, reviewAcquired: false,
+    chosen: [], includeAcquired: false, dark: isDark(), onlyAbbreviations: false, reviewAcquired: false,
     statuses: [
       {key: 'acquise', label: 'acquises', color: 'var(--acq)'},
       {key: 'validee', label: 'validées', color: 'var(--valid)'},
@@ -26,6 +31,12 @@ Vue.createApp({
     await this.loadHome();
   },
   methods: {
+    toggleTheme() {
+      this.dark = !this.dark;
+      const t = this.dark ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+      try { localStorage.setItem('memo-theme', t); } catch (e) {}
+    },
     async guard(fn) {
       this.error = '';
       try { return await fn(); } catch (e) { this.error = e.message; }
