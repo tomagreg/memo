@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memo</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='memo.css') }}">
+</head>
+<body>
+<div id="app"></div>
+{% raw %}
+<script type="text/x-template" id="tpl">
+<main>
+  <p v-if="error" class="err">{{ error }}</p>
+
+  <!-- Accueil -->
+  <section v-if="screen==='home' && home">
+    <h1>Memo</h1>
+    <div v-if="home.open_session" class="panel">
+      Session en cours : {{ home.open_session.validated }} / {{ home.open_session.total }} validées.
+      <div class="row" style="margin-top:10px">
+        <button @click="resume(home.open_session.id)">Reprendre</button>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="muted">Chapitres (aucun coché = tous)</div>
+      <label v-for="ch in home.chapters" :key="ch.chapter" class="chk">
+        <input type="checkbox" :value="ch.chapter" v-model="chosen"> {{ ch.chapter }} <span class="muted">({{ ch.total }})</span>
+      </label>
+      <label class="chk"><input type="checkbox" v-model="includeAcquired"> Inclure les acquises</label>
+      <div class="row"><button @click="start" :disabled="!home.chapters.length">Démarrer</button></div>
+      <p v-if="!home.chapters.length" class="muted">Aucune carte importée.</p>
+    </div>
+    <h2>Progression par chapitre</h2>
+    <div v-for="ch in home.chapters" :key="'p'+ch.chapter" class="panel">
+      <strong>{{ ch.chapter }}</strong>
+      <div class="bar">
+        <span v-for="s in statuses" :key="s.key" :style="{width: (100*ch[s.key]/ch.total)+'%', background: s.color}"></span>
+      </div>
+      <div class="legend"><span v-for="s in statuses" :key="s.key"><i class="dot" :style="{background:s.color}"></i>{{ s.label }} {{ ch[s.key] }}</span></div>
+    </div>
+    <h2>Cartes les plus ratées</h2>
+    <div class="panel">
+      <p v-if="!home.missed.length" class="muted">Aucune erreur pour l'instant.</p>
+      <ul class="plain"><li v-for="c in home.missed" :key="c.id"><span class="err">×{{ c.misses }}</span> <span class="math-src">{{ c.front }}</span> <span class="muted">· {{ c.chapter }}</span></li></ul>
+    </div>
+  </section>
+
+  <!-- Révision -->
+  <section v-else-if="screen==='review' && session">
+    <div class="progress">
+      <strong>{{ session.validated }} / {{ session.total }} validées</strong>
+      <button class="secondary" @click="stop">Arrêter</button>
+    </div>
+    <div class="panel flash" ref="cardBox" v-if="session.card">
+      <div :key="session.card.id + '-f'">
+        <div class="side">Question · {{ session.card.chapter }}</div>
+        <div>{{ session.card.front }}</div>
+      </div>
+      <div v-if="flipped" :key="session.card.id + '-b'" class="back">
+        <div class="side">Réponse</div>
+        <div>{{ session.card.back }}</div>
+      </div>
+    </div>
+    <div class="row" v-if="!flipped"><button @click="flip">Retourner <span class="hint">(Espace)</span></button></div>
+    <div class="row" v-else>
+      <button class="ko" @click="answer(false)" :disabled="busy">Je ne savais pas <span class="hint">(1)</span></button>
+      <button class="ok" @click="answer(true)" :disabled="busy">Je savais <span class="hint">(2)</span></button>
+    </div>
+  </section>
+
+  <!-- Bilan -->
+  <section v-else-if="screen==='summary' && summary">
+    <h1>Bilan de la session</h1>
+    <div class="panel">
+      <div class="stat">{{ summary.validated.length }} / {{ summary.total }}</div>
+      <div class="muted">cartes validées</div>
+      <p>Bonnes réponses : <strong>{{ summary.success_rate === null ? '—' : summary.success_rate + ' %' }}</strong>
+        <span class="muted">({{ summary.correct }} sur {{ summary.answers }})</span></p>
+    </div>
+    <div class="panel" ref="sumBox">
+      <h2 style="margin-top:0">Devenues acquises ({{ summary.newly_acquired.length }})</h2>
+      <ul class="plain"><li v-for="c in summary.newly_acquired" :key="c.id">{{ c.front }}</li></ul>
+      <p v-if="!summary.newly_acquired.length" class="muted">Aucune.</p>
+      <h2>À revoir ({{ summary.to_review.length }})</h2>
+      <ul class="plain"><li v-for="c in summary.to_review" :key="c.id">{{ c.front }}</li></ul>
+      <p v-if="!summary.to_review.length" class="muted">Rien à revoir.</p>
+    </div>
+    <div class="row"><button @click="goHome">Retour à l'accueil</button></div>
+  </section>
+
+  <p v-else class="muted">Chargement…</p>
+</main>
+</script>
+{% endraw %}
+<script src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.prod.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
