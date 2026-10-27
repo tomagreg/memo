@@ -29,6 +29,7 @@
         <input type="checkbox" :value="ch.chapter" v-model="chosen"> {{ ch.chapter }} <span class="muted">({{ ch.total }})</span>
       </label>
       <label class="chk"><input type="checkbox" v-model="includeAcquired"> Inclure les acquises</label>
+      <label v-if="home.abbreviations" class="chk"><input type="checkbox" v-model="onlyAbbreviations"> Seulement les abréviations <span class="muted">({{ home.abbreviations }})</span></label>
       <div class="row"><button @click="start" :disabled="!home.chapters.length">Démarrer</button></div>
       <p v-if="!home.chapters.length" class="muted">Aucune carte importée.</p>
     </div>

@@ -6,6 +6,7 @@ Accès Tailscale uniquement, sans authentification.
 ## Règles
 Constantes dans `config.toml` : 2 bonnes réponses consécutives (une erreur remet le compteur à zéro) valident une carte pour la session, 2 sessions la rendent acquise,
 15 cartes max par session : 70 % nouvelles, 15 % acquises, 5 % validées, 10 % en apprentissage (ratios de `config.toml`, une catégorie courte est complétée par les autres ; une carte validée réussie du premier coup n'exige qu'une bonne réponse), une carte ratée revient 3 rangs plus loin.
+Option « Seulement les abréviations » : filtre les cartes dont l'id contient `.abbr-` (convention d'import).
 Les statuts sont calculés à la volée depuis la table `answers` (journal en ajout seul).
 Une erreur sur une carte acquise la repasse « en apprentissage ».
 

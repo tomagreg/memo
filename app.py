@@ -75,7 +75,8 @@ def api_home():
     if open_row:
         q = json.loads(open_row["queue"])
         open_session = {"id": open_row["id"], "validated": len(q["validated"]), "total": q["total"]}
-    return jsonify({"chapters": list(chapters.values()),
+    abbreviations = sum(1 for c in states if engine.is_abbreviation(c["id"]))
+    return jsonify({"chapters": list(chapters.values()), "abbreviations": abbreviations,
                     "missed": [{"id": c["id"], "chapter": c["chapter"], "front": c["front"],
                                 "misses": c["misses"], "status": c["status"]} for c in missed],
                     "open_session": open_session})
@@ -86,6 +87,7 @@ def api_start():
     body = request.get_json(silent=True) or {}
     chapters = body.get("chapters") or []
     include_acquired = bool(body.get("include_acquired"))
+    only_abbreviations = bool(body.get("only_abbreviations"))
     if not isinstance(chapters, list) or not all(isinstance(c, str) for c in chapters):
         return error("chapters doit être une liste de chaînes")
     conn = get_conn()
@@ -94,6 +96,8 @@ def api_start():
         states = card_states(conn)
         if chapters:
             states = [c for c in states if c["chapter"] in chapters]
+        if only_abbreviations:
+            states = [c for c in states if engine.is_abbreviation(c["id"])]
         ids = engine.select_cards(states, CFG, include_acquired, random.Random())
         if not ids:
             conn.execute("ROLLBACK")

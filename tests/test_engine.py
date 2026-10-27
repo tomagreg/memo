@@ -128,3 +128,9 @@ def test_not_current_card_rejected():
     import pytest
     with pytest.raises(ValueError):
         apply_answer(new_queue(list("ab")), "b", True, CFG)
+
+
+def test_abbreviation_convention():
+    from engine import is_abbreviation
+    assert is_abbreviation("cefi2.p1-couts.abbr-cv")
+    assert not is_abbreviation("cefi2.rappels.bfr-definition")

@@ -46,6 +46,11 @@ def compute_status(answers, cfg):
     return replay(answers, cfg)["status"]
 
 
+def is_abbreviation(card_id):
+    """Convention d'id : les cartes « Que signifie X ? » ont un segment `.abbr-` (ex. cefi2.p1-couts.abbr-cv)."""
+    return ".abbr-" in card_id
+
+
 def quotas(total, cfg):
     """Répartit `total` places entre les statuts selon les ratios de la config (plus fort reste)."""
     ratios = {NEW: cfg["ratio_new"], ACQUIRED: cfg["ratio_acquired"],
