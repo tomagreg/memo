@@ -1,0 +1,1189 @@
+{
+ "schema": 1,
+ "deck": "cefi2",
+ "title": "Culture économique & financière 2 (INGE-2)",
+ "cards": [
+  {
+   "id": "cefi2.rappels.abbr-ca",
+   "chapter": "rappels",
+   "front": "Que signifie CA ?",
+   "back": "Chiffre d'affaires : ventes de la période (comptées en produit dès la facture)."
+  },
+  {
+   "id": "cefi2.rappels.abbr-bfr",
+   "chapter": "rappels",
+   "front": "Que signifie BFR ?",
+   "back": "Besoin en Fonds de Roulement : argent à avancer avant d'être payé par les clients."
+  },
+  {
+   "id": "cefi2.rappels.abbr-ebit",
+   "chapter": "rappels",
+   "front": "Que signifie EBIT ?",
+   "back": "Earnings Before Interest and Taxes : résultat avant intérêts et impôts, c'est-à-dire le résultat d'exploitation (REX)."
+  },
+  {
+   "id": "cefi2.rappels.abbr-esn",
+   "chapter": "rappels",
+   "front": "Que signifie ESN ?",
+   "back": "Entreprise de Services du Numérique (société de services informatiques)."
+  },
+  {
+   "id": "cefi2.rappels.abbr-ia",
+   "chapter": "rappels",
+   "front": "Que signifie IA ?",
+   "back": "Intelligence artificielle."
+  },
+  {
+   "id": "cefi2.rappels.resultat-formule",
+   "chapter": "rappels",
+   "front": "Formule du résultat ?",
+   "back": "$\\text{Résultat} = \\text{Produits} - \\text{Charges}$ ; > 0 : bénéfice, < 0 : perte."
+  },
+  {
+   "id": "cefi2.rappels.resultat-vs-bilan",
+   "chapter": "rappels",
+   "front": "Que décrit le résultat ? Que décrit le bilan ?",
+   "back": "Résultat : la performance de l'activité (ventes − charges), qui enrichit ou appauvrit le patrimoine. Bilan : photo du patrimoine à un instant T."
+  },
+  {
+   "id": "cefi2.rappels.bilan-actif-passif",
+   "chapter": "rappels",
+   "front": "Bilan : actif et passif ?",
+   "back": "Actif : ce que l'entreprise possède. Passif : ce qu'elle doit."
+  },
+  {
+   "id": "cefi2.rappels.impact-performance",
+   "chapter": "rappels",
+   "front": "Décision technique à impact sur la performance (compte de résultat) : exemple ?",
+   "back": "Algorithme d'optimisation des livraisons, chatbot : baisse des coûts de transport et du centre d'appel."
+  },
+  {
+   "id": "cefi2.rappels.impact-structure",
+   "chapter": "rappels",
+   "front": "Décision technique à impact sur la structure financière (bilan) : exemple ?",
+   "back": "Achat de serveurs autofinancé : l'actif augmente, le fonds de roulement baisse."
+  },
+  {
+   "id": "cefi2.rappels.impact-bfr",
+   "chapter": "rappels",
+   "front": "Décision technique à impact sur le BFR : exemple ?",
+   "back": "Choix d'un fournisseur : délais de règlement, stock minimum imposé."
+  },
+  {
+   "id": "cefi2.rappels.resultat-vs-tresorerie",
+   "chapter": "rappels",
+   "front": "Pourquoi le résultat n'est-il pas la trésorerie disponible ?",
+   "back": "Décalages de paiement (vente comptée à la facture, encaissée plus tard) et charges non décaissables (amortissements)."
+  },
+  {
+   "id": "cefi2.rappels.amortissement-non-decaissable",
+   "chapter": "rappels",
+   "front": "Effet d'un amortissement sur le résultat et sur la trésorerie ?",
+   "back": "Il diminue le résultat sans aucune sortie d'argent (charge non décaissable)."
+  },
+  {
+   "id": "cefi2.rappels.bfr-definition",
+   "chapter": "rappels",
+   "front": "Qu'est-ce que le BFR ?",
+   "back": "Argent que l'entreprise avance entre ses décaissements (fournisseurs, salaires) et les encaissements clients."
+  },
+  {
+   "id": "cefi2.rappels.bfr-condition",
+   "chapter": "rappels",
+   "front": "Quand y a-t-il un BFR ?",
+   "back": "Quand la partie du cycle financée par l'entreprise dépasse celle financée par le fournisseur."
+  },
+  {
+   "id": "cefi2.rappels.bfr-cycle",
+   "chapter": "rappels",
+   "front": "Cycle d'exploitation du cours : fournisseur payé à J+45, client payé à J+140. BFR ?",
+   "back": "Le fournisseur finance 45 jours ; l'entreprise finance de J+45 à J+140, soit 95 jours : c'est le BFR."
+  },
+  {
+   "id": "cefi2.rappels.bfr-esn",
+   "chapter": "rappels",
+   "front": "Pourquoi une ESN a-t-elle un BFR sans stock ?",
+   "back": "Elle paie ses salariés chaque mois alors que les clients paient des semaines ou des mois après la prestation : besoin de trésorerie permanent."
+  },
+  {
+   "id": "cefi2.rappels.bfr-projet",
+   "chapter": "rappels",
+   "front": "Un projet doit-il prévoir son BFR ?",
+   "back": "Oui : c'est un besoin à financer, au même titre qu'un investissement."
+  },
+  {
+   "id": "cefi2.rappels.profitabilite-vs-rentabilite",
+   "chapter": "rappels",
+   "front": "Profitabilité ou rentabilité ?",
+   "back": "Profitabilité : résultat rapporté au CA. Rentabilité : résultat rapporté aux ressources engagées."
+  },
+  {
+   "id": "cefi2.rappels.marge-operationnelle",
+   "chapter": "rappels",
+   "front": "Marge opérationnelle ?",
+   "back": "$\\mathrm{EBIT}/\\mathrm{CA}$ : marge opérationnelle générée par 1 € de CA."
+  },
+  {
+   "id": "cefi2.rappels.taux-marge-beneficiaire",
+   "chapter": "rappels",
+   "front": "Taux de marge bénéficiaire ?",
+   "back": "$\\text{Résultat net}/\\mathrm{CA}$ : part du CA qui reste en bénéfice."
+  },
+  {
+   "id": "cefi2.rappels.rentabilite-financiere",
+   "chapter": "rappels",
+   "front": "Rentabilité financière ?",
+   "back": "$\\text{Résultat net}/\\text{Capitaux propres}$ : ce que rapporte 1 € apporté par les actionnaires."
+  },
+  {
+   "id": "cefi2.rappels.triangle",
+   "chapter": "rappels",
+   "front": "Triangle de l'ingénieur ?",
+   "back": "Qualité, coûts, délais : améliorer l'une dégrade souvent une autre."
+  },
+  {
+   "id": "cefi2.rappels.examen",
+   "chapter": "rappels",
+   "front": "Format de l'examen ?",
+   "back": "Examen final (DE, 100 %), sans document ni ordinateur, calculatrice seule : formules par cœur, tableaux posés à la main."
+  },
+  {
+   "id": "cefi2.rappels.plan-module",
+   "chapter": "rappels",
+   "front": "Les 3 parties du module ?",
+   "back": "1) Chiffrer un projet (coûts, TCO). 2) Rentabilité (DR, VAN, IP, TRI, ROI). 3) Business plan (Canvas, SR, compte de résultat, financement, rentabilité économique)."
+  },
+  {
+   "id": "cefi2.p1-couts.abbr-cv",
+   "chapter": "p1-couts",
+   "front": "Que signifie CV ?",
+   "back": "Charges variables (coûts qui varient avec le niveau d'activité)."
+  },
+  {
+   "id": "cefi2.p1-couts.abbr-cf",
+   "chapter": "p1-couts",
+   "front": "Que signifie CF ?",
+   "back": "Charges fixes (coûts qui ne varient pas avec l'activité)."
+  },
+  {
+   "id": "cefi2.p1-couts.abbr-mcv",
+   "chapter": "p1-couts",
+   "front": "Que signifie MCV ?",
+   "back": "Marge sur coûts variables : $\\mathrm{CA} - \\mathrm{CV}$."
+  },
+  {
+   "id": "cefi2.p1-couts.abbr-tmcv",
+   "chapter": "p1-couts",
+   "front": "Que signifie TMCV ?",
+   "back": "Taux de marge sur coûts variables (taux de contribution) : $\\mathrm{MCV}/\\mathrm{CA}$."
+  },
+  {
+   "id": "cefi2.p1-couts.abbr-tco",
+   "chapter": "p1-couts",
+   "front": "Que signifie TCO ?",
+   "back": "Total Cost of Ownership : coût total de possession."
+  },
+  {
+   "id": "cefi2.p1-couts.abbr-si",
+   "chapter": "p1-couts",
+   "front": "Que signifie SI ?",
+   "back": "Système d'information (ex. : le service de sécurité du SI est une charge indirecte)."
+  },
+  {
+   "id": "cefi2.p1-couts.abbr-sav",
+   "chapter": "p1-couts",
+   "front": "Que signifie SAV ?",
+   "back": "Service après-vente (il fait partie du coût de distribution)."
+  },
+  {
+   "id": "cefi2.p1-couts.question-cle",
+   "chapter": "p1-couts",
+   "front": "Quelle est la vraie question avant d'ajouter une fonctionnalité ?",
+   "back": "« Créera-t-elle assez de valeur pour justifier son coût ? » et non « est-elle techniquement intéressante ? »."
+  },
+  {
+   "id": "cefi2.p1-couts.valeur-percue",
+   "chapter": "p1-couts",
+   "front": "Quand une innovation crée-t-elle de la valeur ?",
+   "back": "Quand le client la perçoit (gain de temps, baisse des coûts, qualité accrue) et accepte de la payer."
+  },
+  {
+   "id": "cefi2.p1-couts.rendement-decroissant",
+   "chapter": "p1-couts",
+   "front": "Rendement décroissant ?",
+   "back": "Dépenser plus ne crée pas forcément plus de valeur. Ex. cybersécurité : −20 % de temps de détection pour 300 k€, −30 % pour 900 k€."
+  },
+  {
+   "id": "cefi2.p1-couts.valeur-nette",
+   "chapter": "p1-couts",
+   "front": "Comment choisir entre plusieurs versions d'un produit ?",
+   "back": "Maximiser la valeur nette = prix de vente probable − coût."
+  },
+  {
+   "id": "cefi2.p1-couts.valeur-nette-exemple",
+   "chapter": "p1-couts",
+   "front": "Maintenance prédictive (coût ; prix) : V1 (300 ; 400), V2 (400 ; 700), V3 (800 ; 850), en k€. Laquelle choisir ?",
+   "back": "V2 : valeur nette 300 k€ (V1 100, V3 50). V3 est la plus performante mais le client ne paie presque rien de plus."
+  },
+  {
+   "id": "cefi2.p1-couts.chaine-valeur",
+   "chapter": "p1-couts",
+   "front": "Chaîne de raisonnement coût-valeur ?",
+   "back": "Décision technique → amélioration → valeur perçue par le client → acceptation de payer → le projet est-il rentable (ROI) ?"
+  },
+  {
+   "id": "cefi2.p1-couts.cout-definition",
+   "chapter": "p1-couts",
+   "front": "Définition d'un coût ?",
+   "back": "Valeur de toutes les consommations nécessaires à la conception, au déploiement et à l'exploitation. Pas que le développement : salaires bruts + charges, licences, matériel, serveurs, cloud, déplacements…"
+  },
+  {
+   "id": "cefi2.p1-couts.charges-directes",
+   "chapter": "p1-couts",
+   "front": "Charges directes ?",
+   "back": "Directement affectables au projet, produit ou service. Ex. : salaires des 4 ingénieurs dédiés."
+  },
+  {
+   "id": "cefi2.p1-couts.charges-indirectes",
+   "chapter": "p1-couts",
+   "front": "Charges indirectes ?",
+   "back": "Communes à plusieurs projets. Ex. : locaux, réseau informatique, service de sécurité du SI."
+  },
+  {
+   "id": "cefi2.p1-couts.charges-variables",
+   "chapter": "p1-couts",
+   "front": "Charges variables ?",
+   "back": "Varient avec le niveau d'activité. Ex. : hébergement cloud, stockage, support client."
+  },
+  {
+   "id": "cefi2.p1-couts.charges-fixes",
+   "chapter": "p1-couts",
+   "front": "Charges fixes ?",
+   "back": "Ne varient pas avec l'activité. Ex. : loyers, abonnements annuels, partie des salaires, amortissements de serveurs déjà achetés."
+  },
+  {
+   "id": "cefi2.p1-couts.directe-et-fixe",
+   "chapter": "p1-couts",
+   "front": "Exemple de charge à la fois directe et fixe ? indirecte et fixe ?",
+   "back": "Directe et fixe : salaire d'un ingénieur dédié. Indirecte et fixe : loyer."
+  },
+  {
+   "id": "cefi2.p1-couts.perimetre-ingenieur",
+   "chapter": "p1-couts",
+   "front": "Périmètre d'action de l'ingénieur ?",
+   "back": "Les charges directes. L'entreprise doit aussi financer les charges indirectes qui rendent le projet possible."
+  },
+  {
+   "id": "cefi2.p1-couts.cout-achat",
+   "chapter": "p1-couts",
+   "front": "Coût d'achat ?",
+   "back": "Achats + frais d'approvisionnement jusqu'à la mise en stock."
+  },
+  {
+   "id": "cefi2.p1-couts.cout-production",
+   "chapter": "p1-couts",
+   "front": "Coût de production ?",
+   "back": "Coût d'achat des matières consommées + charges de production (salaires, amortissements, énergie, location de matériel…)."
+  },
+  {
+   "id": "cefi2.p1-couts.cout-distribution",
+   "chapter": "p1-couts",
+   "front": "Coût de distribution ?",
+   "back": "Marketing, publicité, force de vente, livraison, préparation des commandes, SAV…"
+  },
+  {
+   "id": "cefi2.p1-couts.internaliser",
+   "chapter": "p1-couts",
+   "front": "Effet d'internaliser le développement sur les coûts ?",
+   "back": "Salaires ↑, sous-traitance ↓ : impact direct sur la performance."
+  },
+  {
+   "id": "cefi2.p1-couts.passer-cloud",
+   "chapter": "p1-couts",
+   "front": "Effet de passer au cloud sur les coûts ?",
+   "back": "Abonnements ↑ (coûts variables), investissements ↓ : impact sur le patrimoine et la performance."
+  },
+  {
+   "id": "cefi2.p1-couts.acheter-serveurs",
+   "chapter": "p1-couts",
+   "front": "Effet d'acheter des serveurs sur les coûts ?",
+   "back": "Amortissements ↑ (coûts fixes), coûts cloud ↓ : impact sur le patrimoine et la performance."
+  },
+  {
+   "id": "cefi2.p1-couts.serveurs-vs-cloud-structure",
+   "chapter": "p1-couts",
+   "front": "Serveurs achetés ou cloud : quelle structure de coûts ?",
+   "back": "Serveurs : plus de coûts fixes. Cloud : plus de coûts variables. Le choix dépend de la stratégie, de la croissance attendue et des contraintes financières."
+  },
+  {
+   "id": "cefi2.p1-couts.build",
+   "chapter": "p1-couts",
+   "front": "BUILD ?",
+   "back": "Phase de conception-développement : analyse des besoins, conception, développement, tests, formation des utilisateurs."
+  },
+  {
+   "id": "cefi2.p1-couts.run",
+   "chapter": "p1-couts",
+   "front": "RUN ?",
+   "back": "Exploitation (hébergement, licences annuelles, supervision, maintenance, cybersécurité, sauvegarde), évolution ou remplacement, et fin de vie."
+  },
+  {
+   "id": "cefi2.p1-couts.run-fin-de-vie",
+   "chapter": "p1-couts",
+   "front": "Où classer les coûts de fin de vie (désinstallation, migration, archivage des données) ?",
+   "back": "Dans le RUN."
+  },
+  {
+   "id": "cefi2.p1-couts.tco-definition",
+   "chapter": "p1-couts",
+   "front": "TCO : définition ?",
+   "back": "Total Cost of Ownership, coût total de possession : coût d'une solution sur toute sa durée de vie."
+  },
+  {
+   "id": "cefi2.p1-couts.tco-formule",
+   "chapter": "p1-couts",
+   "front": "Formule du TCO ?",
+   "back": "$\\mathrm{TCO} = \\mathrm{BUILD} + \\sum_{n=1}^{N} \\mathrm{RUN}_n$ : BUILD = conception et déploiement (une fois), $\\mathrm{RUN}_n$ = coûts d'exploitation de l'année $n$."
+  },
+  {
+   "id": "cefi2.p1-couts.tco-question",
+   "chapter": "p1-couts",
+   "front": "Quelle question du directeur le TCO éclaire-t-il ?",
+   "back": "« Une fois développée, combien la solution va-t-elle encore coûter ? »"
+  },
+  {
+   "id": "cefi2.p1-couts.tco-exemple",
+   "chapter": "p1-couts",
+   "front": "TCO sur 8 ans : A (BUILD 900, RUN 480) contre B (BUILD 600, RUN 1 230), en k€. Laquelle choisir ?",
+   "back": "A : TCO 1 380 contre 1 830 pour B. B paraît moins chère au départ mais A coûte 450 k€ de moins sur la durée de vie."
+  },
+  {
+   "id": "cefi2.p1-couts.tco-decision",
+   "chapter": "p1-couts",
+   "front": "Un coût initial plus élevé peut-il réduire le coût global ?",
+   "back": "Oui : une décision qui augmente le BUILD peut réduire fortement le TCO. On retient le TCO le plus faible sur la durée de vie."
+  },
+  {
+   "id": "cefi2.p1-couts.arbitrage-serveurs-cloud",
+   "chapter": "p1-couts",
+   "front": "Acheter des serveurs ou utiliser le cloud : effet sur BUILD et RUN ?",
+   "back": "Serveurs : BUILD ↑, coûts cloud (RUN) ↓. Cloud : BUILD ↓, RUN ↑."
+  },
+  {
+   "id": "cefi2.p1-couts.arbitrage-qualite",
+   "chapter": "p1-couts",
+   "front": "Automatiser les tests, écrire un code plus maintenable : effet sur BUILD et RUN ?",
+   "back": "BUILD ↑ ; coûts de correction ↓ et maintenance ↓."
+  },
+  {
+   "id": "cefi2.p1-couts.tco-egalite",
+   "chapter": "p1-couts",
+   "front": "Méthode : à partir de quelle durée deux solutions ont-elles le même TCO ?",
+   "back": "Égaler les TCO : $\\mathrm{BUILD}_1 + n\\,\\mathrm{RUN}_1 = \\mathrm{BUILD}_2 + n\\,\\mathrm{RUN}_2$ et résoudre en $n$. Ex. : $245 + 60n = 95 + 110n \\Rightarrow n = 3$ ans."
+  },
+  {
+   "id": "cefi2.p1-couts.direct-costing",
+   "chapter": "p1-couts",
+   "front": "Direct costing : à quoi sert-il ?",
+   "back": "Vérifier si un portefeuille de produits ou projets fait gagner de l'argent, en ne rattachant aux produits que leurs coûts variables directs."
+  },
+  {
+   "id": "cefi2.p1-couts.mcv-formule",
+   "chapter": "p1-couts",
+   "front": "Formule de la MCV ?",
+   "back": "$\\mathrm{MCV} = \\mathrm{CA} - \\mathrm{CV}$."
+  },
+  {
+   "id": "cefi2.p1-couts.resultat-direct-costing",
+   "chapter": "p1-couts",
+   "front": "Résultat en direct costing ?",
+   "back": "$\\text{Résultat} = \\sum \\mathrm{MCV} - \\mathrm{CF}_{\\text{indirects}}$ : somme des MCV des produits moins les coûts fixes indirects."
+  },
+  {
+   "id": "cefi2.p1-couts.taux-contribution",
+   "chapter": "p1-couts",
+   "front": "Taux de MCV (taux de contribution) : que mesure-t-il ?",
+   "back": "$\\mathrm{TMCV} = \\mathrm{MCV}/\\mathrm{CA}$ : combien chaque produit participe à couvrir les coûts fixes."
+  },
+  {
+   "id": "cefi2.p1-couts.mcv-negative",
+   "chapter": "p1-couts",
+   "front": "MCV négative : que signifie-t-elle ?",
+   "back": "Chaque vente coûte plus qu'elle ne rapporte : le produit ne contribue pas aux coûts fixes."
+  },
+  {
+   "id": "cefi2.p1-couts.mcv-negative-action",
+   "chapter": "p1-couts",
+   "front": "Produit à MCV négative : que faire ?",
+   "back": "L'améliorer (prix ↑, CV ↓) ou envisager son abandon, sauf raison stratégique (produit d'appel, lien avec un autre produit)."
+  },
+  {
+   "id": "cefi2.p1-couts.regle-gain",
+   "chapter": "p1-couts",
+   "front": "Quand l'entreprise gagne-t-elle de l'argent (direct costing) ?",
+   "back": "Quand la marge dégagée (somme des MCV) est supérieure aux coûts fixes."
+  },
+  {
+   "id": "cefi2.p1-couts.exemple-direct-costing",
+   "chapter": "p1-couts",
+   "front": "Produits A, B, C : MCV 290, 70, −2 (k€), CF indirects 345 k€. Résultat ?",
+   "back": "$358 - 345 = 13$ k€. Taux de MCV : A 53 %, B 37 %, total 38 %."
+  },
+  {
+   "id": "cefi2.p1-couts.ex-cloud-interne",
+   "chapter": "p1-couts",
+   "front": "Interne ou cloud sur 5 ans : conclusion du cours (GamaIA) ?",
+   "back": "Cloud moins cher : TCO 2 183,6 contre 2 265 k€ (−81 k€) et 670 k€ de moins au départ, il absorbe la croissance. Mais son RUN croît avec les utilisateurs : l'écart se réduit au-delà de 5 ans."
+  },
+  {
+   "id": "cefi2.p1-couts.ex-achat-location",
+   "chapter": "p1-couts",
+   "front": "ESN, 60 postes sur 5 ans : achat ou location ?",
+   "back": "TCO achat 312 000 € contre location 279 000 € : le renouvellement des postes en année 5 (132 000 €) fait basculer vers la location. Sans renouvellement, l'achat coûterait 180 000 €."
+  },
+  {
+   "id": "cefi2.p1-couts.ex-disponibilite",
+   "chapter": "p1-couts",
+   "front": "Indisponibilité annuelle à 99,5 % et à 99,99 % de disponibilité ?",
+   "back": "99,5 % ≈ 44 h par an ; 99,99 % ≈ 53 min par an."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.abbr-dr",
+   "chapter": "p2-rentabilite",
+   "front": "Que signifie DR ?",
+   "back": "Délai de récupération."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.abbr-va",
+   "chapter": "p2-rentabilite",
+   "front": "Que signifie VA ?",
+   "back": "Valeur actuelle : valeur d'aujourd'hui d'un flux futur, $F_n (1+i)^{-n}$."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.abbr-van",
+   "chapter": "p2-rentabilite",
+   "front": "Que signifie VAN ?",
+   "back": "Valeur actuelle nette : somme des flux actualisés − investissement initial."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.abbr-ip",
+   "chapter": "p2-rentabilite",
+   "front": "Que signifie IP ?",
+   "back": "Indice de profitabilité : flux actualisés / investissement initial."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.abbr-tri",
+   "chapter": "p2-rentabilite",
+   "front": "Que signifie TRI ?",
+   "back": "Taux de rentabilité interne : taux d'actualisation qui annule la VAN."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.abbr-roi",
+   "chapter": "p2-rentabilite",
+   "front": "Que signifie ROI ?",
+   "back": "Return On Investment : retour sur investissement."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.notation",
+   "chapter": "p2-rentabilite",
+   "front": "Notations des formules : $I_0$, $F_n$, $i$, $t$, $E_n$, $C_n$, $A_n$ ?",
+   "back": "$I_0$ investissement initial ; $F_n$ flux de l'année $n$ ; $i$ taux d'actualisation ; $t$ taux d'IS ; $E_n$ économies ; $C_n$ nouveaux coûts ; $A_n$ amortissements."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.pourquoi-temps",
+   "chapter": "p2-rentabilite",
+   "front": "Pourquoi un projet rentable seulement au bout de 6 ans est-il risqué ?",
+   "back": "La technologie sera peut-être dépassée, et pendant 6 ans il faut rembourser les emprunts, payer les salaires, financer les mises à jour."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.deux-questions",
+   "chapter": "p2-rentabilite",
+   "front": "Les deux questions de la rentabilité d'un projet ?",
+   "back": "Les gains couvrent-ils l'investissement ? En combien de temps ?"
+  },
+  {
+   "id": "cefi2.p2-rentabilite.dr-definition",
+   "chapter": "p2-rentabilite",
+   "front": "Délai de récupération (DR) : définition ?",
+   "back": "Temps nécessaire pour que les flux cumulés remboursent l'investissement initial."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.dr-formule",
+   "chapter": "p2-rentabilite",
+   "front": "Formule du DR pour un flux constant ?",
+   "back": "$\\mathrm{DR} = \\dfrac{I_0}{F}$ ($I_0$ investissement initial, $F$ flux annuel constant)."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.dr-exemple",
+   "chapter": "p2-rentabilite",
+   "front": "Solution de saisie des factures : coût 150 000 € (développement 120 000 + formation 30 000), gains 50 000 €/an pendant 8 ans. DR ?",
+   "back": "$150\\,000 / 50\\,000 = 3$ ans."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.dr-methode",
+   "chapter": "p2-rentabilite",
+   "front": "Méthode : DR avec flux non constants ?",
+   "back": "1) Cumuler les flux jusqu'à ce que le cumul devienne positif. 2) Dans cette année : reste à récupérer / flux de l'année. 3) Multiplier la fraction par 12 pour les mois."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.dr-exemple-methode",
+   "chapter": "p2-rentabilite",
+   "front": "Investissement 1 000 000, flux 150 000 / 300 000 / 500 000 / 650 000. DR ?",
+   "back": "Cumuls 150 000, 450 000, 950 000 ; il manque 50 000 en année 4 : $50\\,000 / 650\\,000 = 0{,}077$ an ≈ 0,9 mois. DR ≈ 3 ans et 1 mois."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.dr-interpretation",
+   "chapter": "p2-rentabilite",
+   "front": "Comment interpréter un DR ?",
+   "back": "Le comparer à la durée de vie économique du projet (une application vit environ 3 à 5 ans) ou à une norme interne."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.dr-exemple-vie",
+   "chapter": "p2-rentabilite",
+   "front": "DR de 4 ans : accepté si la durée de vie est de 3 ans ? de 8 ans ?",
+   "back": "3 ans : refus, le projet est remplacé avant d'être remboursé. 8 ans : accepté."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.dr-liquidite",
+   "chapter": "p2-rentabilite",
+   "front": "Le DR mesure-t-il la rentabilité ?",
+   "back": "Non : c'est un critère de liquidité et de risque."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.dr-limite",
+   "chapter": "p2-rentabilite",
+   "front": "Limites du délai de récupération ?",
+   "back": "Il ignore les flux après la récupération et la valeur temps de l'argent."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.dr-limite-exemple",
+   "chapter": "p2-rentabilite",
+   "front": "Deux projets de DR 3 ans : l'un s'arrête en N3, l'autre rapporte 20 000 €/an jusqu'en N8. Le DR les distingue-t-il ?",
+   "back": "Non : il ignore les flux après la récupération ; le second crée plus de richesse."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.actualisation-pourquoi",
+   "chapter": "p2-rentabilite",
+   "front": "Pourquoi 200 000 € reçus en 2027 valent-ils plus que 200 000 € reçus en 2032 ?",
+   "back": "Encaisser tôt permet de financer plus vite ; l'investissement a un coût financier ; un flux lointain est plus incertain ; coût d'opportunité de l'argent investi."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.actualisation-definition",
+   "chapter": "p2-rentabilite",
+   "front": "Actualisation ?",
+   "back": "Ramener chaque flux futur à sa valeur d'aujourd'hui pour pouvoir le comparer à l'investissement."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.va-formule",
+   "chapter": "p2-rentabilite",
+   "front": "Formule de la VA d'un flux $F_n$ ?",
+   "back": "$\\mathrm{VA}(F_n) = \\dfrac{F_n}{(1+i)^n} = F_n \\times (1+i)^{-n}$ ($i$ taux d'actualisation, $n$ rang de l'année)."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.va-exemple",
+   "chapter": "p2-rentabilite",
+   "front": "À $i = 15\\,\\%$, que vaut aujourd'hui 1 € reçu dans un an ?",
+   "back": "$1 / 1{,}15 = 0{,}869$ €."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.taux-actualisation",
+   "chapter": "p2-rentabilite",
+   "front": "Que reflète le taux d'actualisation $i$ ?",
+   "back": "Au choix : le coût du capital (coût moyen pondéré des financements), le coût d'opportunité (placement alternatif) ou une rentabilité minimale fixée par l'entreprise."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.van-formule",
+   "chapter": "p2-rentabilite",
+   "front": "Formule de la VAN ?",
+   "back": "$\\mathrm{VAN} = \\sum_{n=1}^{N} F_n (1+i)^{-n} - I_0$ ($F_n$ flux de l'année $n$, $i$ taux d'actualisation, $I_0$ investissement initial)."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.van-regle",
+   "chapter": "p2-rentabilite",
+   "front": "VAN : règle de décision ?",
+   "back": "VAN > 0 : crée de la valeur, accepté. VAN < 0 : détruit de la valeur, refusé. Entre plusieurs projets : la VAN la plus élevée."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.van-valeur-residuelle",
+   "chapter": "p2-rentabilite",
+   "front": "Où met-on la valeur résiduelle dans une VAN ?",
+   "back": "Elle s'ajoute au flux de la dernière année."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.van-exemple",
+   "chapter": "p2-rentabilite",
+   "front": "Projets A et B ($i = 8\\,\\%$), même investissement 1 000 000 et mêmes flux totaux 1 600 000, A encaisse plus tôt. VAN ?",
+   "back": "VAN A = 353 231 € > VAN B = 270 776 € : les flux de A arrivent plus tôt, donc ils sont moins décotés."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.van-limite",
+   "chapter": "p2-rentabilite",
+   "front": "Limite de la VAN ?",
+   "back": "Elle dépend du taux choisi et s'exprime en valeur absolue (montant)."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.ip-formule",
+   "chapter": "p2-rentabilite",
+   "front": "Formule de l'IP ?",
+   "back": "$\\mathrm{IP} = \\dfrac{\\sum_{n=1}^{N} F_n (1+i)^{-n}}{I_0} = 1 + \\dfrac{\\mathrm{VAN}}{I_0}$."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.ip-interpretation",
+   "chapter": "p2-rentabilite",
+   "front": "IP = 1,35 : que signifie-t-il ?",
+   "back": "Chaque euro investi génère 1,35 € de valeur actuelle, soit 0,35 € de richesse créée."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.ip-equivalence",
+   "chapter": "p2-rentabilite",
+   "front": "IP > 1 équivaut à quoi ?",
+   "back": "VAN > 0."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.ip-usage",
+   "chapter": "p2-rentabilite",
+   "front": "Intérêt et limite de l'IP ?",
+   "back": "Il compare des projets d'investissements de tailles différentes (raisonne par euro investi), mais ne dit pas le montant total créé."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.tri-definition",
+   "chapter": "p2-rentabilite",
+   "front": "TRI : définition et règle de décision ?",
+   "back": "Taux d'actualisation pour lequel $\\mathrm{VAN} = 0$ : $\\sum F_n (1+\\mathrm{TRI})^{-n} = I_0$. TRI > taux exigé : projet accepté."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.tri-interpretation",
+   "chapter": "p2-rentabilite",
+   "front": "VAN positive à 8 % : que dire du TRI ? Et si la VAN s'annule à 12 % ?",
+   "back": "TRI > 8 %. VAN nulle à 12 % : le projet supporte un coût du capital jusqu'à 12 %, c'est son rendement interne."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.tri-interpolation",
+   "chapter": "p2-rentabilite",
+   "front": "Méthode : calculer le TRI à la main ?",
+   "back": "Tester deux taux $i_1$ (VAN$_1$ > 0) et $i_2$ (VAN$_2$ < 0) encadrant zéro, puis interpoler : $\\mathrm{TRI} \\approx i_1 + (i_2 - i_1) \\times \\dfrac{\\mathrm{VAN}_1}{\\mathrm{VAN}_1 - \\mathrm{VAN}_2}$."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.tri-limite",
+   "chapter": "p2-rentabilite",
+   "front": "Limite du TRI ?",
+   "back": "Calcul par tâtonnement."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.roi-formule",
+   "chapter": "p2-rentabilite",
+   "front": "Formule du ROI ?",
+   "back": "$\\mathrm{ROI} = \\dfrac{\\text{Gains générés} - I_0}{I_0}$."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.roi-limite",
+   "chapter": "p2-rentabilite",
+   "front": "Limite du ROI ?",
+   "back": "Très utilisé mais peu pertinent : ignore le temps, le risque et le coût du capital, et peut faire paraître équivalents des projets très différents. Indicatif seulement."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.arbitrage-liquidite",
+   "chapter": "p2-rentabilite",
+   "front": "Arbitrage liquidité / rentabilité ?",
+   "back": "On peut préférer un DR court à une VAN plus forte : plus tôt la mise est récupérée, moins le risque d'obsolescence est grand (surtout pour les investissements courts, < 5 ans)."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.quel-critere",
+   "chapter": "p2-rentabilite",
+   "front": "Quel critère mesure : la vitesse de remboursement ? la richesse créée en € d'aujourd'hui ? la richesse par € investi ? le rendement intrinsèque ?",
+   "back": "DR ; VAN ; IP ; TRI."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.ex-cloud-hybride",
+   "chapter": "p2-rentabilite",
+   "front": "Cloud hybride : $I_0 = 120\\,000$ €, $i = 8\\,\\%$, flux 30 / 40 / 45 / 35 / 30 k€. DR, VAN, IP ?",
+   "back": "DR = 3 + 5/35 ≈ 3 ans 2 mois ; VAN = 23 937 € ; IP = 1,20 : rentable, récupéré avant 5 ans mais assez tard."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.ex-ia-generative",
+   "chapter": "p2-rentabilite",
+   "front": "Deux projets d'IA générative : le projet 2 récupère plus vite, le projet 1 a la VAN la plus forte. Lequel retenir ?",
+   "back": "À investissement égal, le projet 1 (VAN), sauf si l'entreprise privilégie la liquidité, l'IA générative évoluant très vite."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.ex-migration-cloud",
+   "chapter": "p2-rentabilite",
+   "front": "Migration cloud (GSe) : pourquoi la refuser ?",
+   "back": "VAN −196,2 k€, IP 0,52, DR jamais atteint : le coût cloud est variable et croît avec les capteurs alors que l'ancienne infrastructure est supposée fixe, donc les économies fondent."
+  },
+  {
+   "id": "cefi2.p2-rentabilite.ex-api-interne",
+   "chapter": "p2-rentabilite",
+   "front": "Service externe facturé à la requête ou infrastructure interne (Alpha) : conclusion ?",
+   "back": "Interne rentable (VAN 250,9 k€, IP 1,28, DR ≈ 4,2 ans) : le coût externe est variable avec les requêtes, l'interne surtout fixe. DR long : sensible à une croissance plus faible que prévu."
+  },
+  {
+   "id": "cefi2.p3-business-plan.abbr-sr",
+   "chapter": "p3-business-plan",
+   "front": "Que signifie SR ?",
+   "back": "Seuil de rentabilité (point mort)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.abbr-rex",
+   "chapter": "p3-business-plan",
+   "front": "Que signifie REX ?",
+   "back": "Résultat d'exploitation : CA − CV − CF − amortissements (équivalent de l'EBIT)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.abbr-is",
+   "chapter": "p3-business-plan",
+   "front": "Que signifie IS ?",
+   "back": "Impôt sur les sociétés."
+  },
+  {
+   "id": "cefi2.p3-business-plan.abbr-caf",
+   "chapter": "p3-business-plan",
+   "front": "Que signifie CAF ?",
+   "back": "Capacité d'autofinancement : résultat net + amortissements, soit le flux net potentiel de trésorerie."
+  },
+  {
+   "id": "cefi2.p3-business-plan.abbr-re",
+   "chapter": "p3-business-plan",
+   "front": "Que signifie $R_e$ ?",
+   "back": "Rentabilité économique : REX / (investissements + BFR)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.abbr-vr",
+   "chapter": "p3-business-plan",
+   "front": "Que signifie VR ?",
+   "back": "Valeur résiduelle : valeur de revente en fin de période (s'ajoute au flux de la dernière année)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.bp-objet",
+   "chapter": "p3-business-plan",
+   "front": "À quoi sert le business plan ?",
+   "back": "Démontrer la faisabilité économique et financière : comment le projet génère un résultat, ses leviers de performance, son financement et ses conséquences financières."
+  },
+  {
+   "id": "cefi2.p3-business-plan.bp-synthese",
+   "chapter": "p3-business-plan",
+   "front": "Enchaînement que le business plan synthétise ?",
+   "back": "Valeur → coûts → seuil de rentabilité → rentabilité → financement."
+  },
+  {
+   "id": "cefi2.p3-business-plan.bm-vs-bp",
+   "chapter": "p3-business-plan",
+   "front": "Business model (Canvas) ou business plan ?",
+   "back": "Model : qualitatif et stratégique, en amont (comment créer, délivrer et capter la valeur). Plan : chiffré et financier, en aval (combien ça coûte, rapporte, faut-il financer)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.bm-usage",
+   "chapter": "p3-business-plan",
+   "front": "Le business model ne sert-il qu'à créer une entreprise ?",
+   "back": "Non : il s'applique aussi au lancement d'un nouveau produit numérique dans une entreprise existante."
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-blocs",
+   "chapter": "p3-business-plan",
+   "front": "Les 9 blocs du Business Model Canvas ?",
+   "back": "Proposition de valeur, segments de clientèle, canaux de distribution, relations clients, sources de revenus, activités clés, ressources clés, partenaires clés, structure de coûts."
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-disposition",
+   "chapter": "p3-business-plan",
+   "front": "Disposition du Canvas ?",
+   "back": "Partenaires, activités et ressources à gauche (côté entreprise) ; relations, canaux et segments à droite (côté client) ; proposition de valeur au centre ; coûts et revenus en bas."
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-valeur",
+   "chapter": "p3-business-plan",
+   "front": "Canvas : proposition de valeur ?",
+   "back": "Le cœur : quelle valeur apporte-t-on ? Produit nouveau, moins cher, personnalisé, meilleure expérience, plus durable…"
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-segments",
+   "chapter": "p3-business-plan",
+   "front": "Canvas : segments de clientèle ?",
+   "back": "Qui sont les clients ?"
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-canaux",
+   "chapter": "p3-business-plan",
+   "front": "Canvas : canaux de distribution ?",
+   "back": "Comment atteindre les clients ?"
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-relations",
+   "chapter": "p3-business-plan",
+   "front": "Canvas : relations clients ?",
+   "back": "Quel type de relation : abonnement, support, accompagnement ?"
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-revenus",
+   "chapter": "p3-business-plan",
+   "front": "Canvas : sources de revenus ?",
+   "back": "Comment et combien les clients paient-ils ?"
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-activites",
+   "chapter": "p3-business-plan",
+   "front": "Canvas : activités clés ?",
+   "back": "Que faut-il faire pour délivrer la valeur ?"
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-ressources",
+   "chapter": "p3-business-plan",
+   "front": "Canvas : ressources clés ?",
+   "back": "De quoi a-t-on besoin : compétences, technologie, données ?"
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-partenaires",
+   "chapter": "p3-business-plan",
+   "front": "Canvas : partenaires clés ?",
+   "back": "Avec qui travailler : fournisseurs cloud, intégrateurs ?"
+  },
+  {
+   "id": "cefi2.p3-business-plan.canvas-couts",
+   "chapter": "p3-business-plan",
+   "front": "Canvas : structure de coûts ?",
+   "back": "Quels sont les coûts principaux : fixes, variables, BUILD, RUN ?"
+  },
+  {
+   "id": "cefi2.p3-business-plan.bp-etapes",
+   "chapter": "p3-business-plan",
+   "front": "Les 5 étapes du business plan ?",
+   "back": "1) Proposition de valeur. 2) Chiffrer le projet (coûts, revenus, SR). 3) Compte de résultat prévisionnel. 4) Rentabilité (DR, VAN, IP). 5) Plan de financement."
+  },
+  {
+   "id": "cefi2.p3-business-plan.bp-etape-valeur",
+   "chapter": "p3-business-plan",
+   "front": "Étape 1 : rédiger la proposition de valeur ?",
+   "back": "Identifier le problème (ex. pannes aléatoires coûteuses) puis la réponse (réduire les pannes de 30 %). Une innovation a de la valeur parce qu'elle résout un problème, pas parce qu'elle est innovante."
+  },
+  {
+   "id": "cefi2.p3-business-plan.bp-etape-chiffrage",
+   "chapter": "p3-business-plan",
+   "front": "Étape 2 : que chiffre-t-on ?",
+   "back": "Coûts (BUILD, RUN, fixes, variables), revenus (nombre de clients estimé avec les commerciaux × prix de vente), seuil de rentabilité."
+  },
+  {
+   "id": "cefi2.p3-business-plan.sr-definition",
+   "chapter": "p3-business-plan",
+   "front": "Seuil de rentabilité : définition ?",
+   "back": "Chiffre d'affaires à partir duquel le projet couvre tous ses coûts et commence à faire du bénéfice (résultat = 0)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.sr-pertinence",
+   "chapter": "p3-business-plan",
+   "front": "Pour quoi le SR est-il pertinent ?",
+   "back": "Pour un produit ou une activité homogène ; beaucoup moins pour un portefeuille de projets."
+  },
+  {
+   "id": "cefi2.p3-business-plan.sr-formule",
+   "chapter": "p3-business-plan",
+   "front": "Seuil de rentabilité en chiffre d'affaires ?",
+   "back": "$\\mathrm{SR} = \\dfrac{\\mathrm{CF}}{\\mathrm{TMCV}}$ avec $\\mathrm{TMCV} = \\dfrac{\\mathrm{CA} - \\mathrm{CV}}{\\mathrm{CA}}$ ; CF charges fixes. Au seuil, le résultat est nul."
+  },
+  {
+   "id": "cefi2.p3-business-plan.sr-raisonnement",
+   "chapter": "p3-business-plan",
+   "front": "Pourquoi $\\mathrm{SR} = \\mathrm{CF}/\\mathrm{TMCV}$ ?",
+   "back": "Au seuil, la marge couvre exactement les coûts fixes : $\\mathrm{TMCV} \\times \\mathrm{SR} = \\mathrm{CF}$."
+  },
+  {
+   "id": "cefi2.p3-business-plan.sr-quantite",
+   "chapter": "p3-business-plan",
+   "front": "Seuil de rentabilité en quantité ?",
+   "back": "$\\mathrm{SR}_{\\text{quantité}} = \\dfrac{\\mathrm{CF}}{\\mathrm{MCV}_u} = \\dfrac{\\mathrm{CF}}{p - \\mathrm{CV}_u}$ ($p$ prix de vente unitaire, $\\mathrm{CV}_u$ coût variable unitaire)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.marge-securite",
+   "chapter": "p3-business-plan",
+   "front": "Marge de sécurité ?",
+   "back": "$\\mathrm{CA} - \\mathrm{SR}$."
+  },
+  {
+   "id": "cefi2.p3-business-plan.indice-securite",
+   "chapter": "p3-business-plan",
+   "front": "Que mesure $\\dfrac{\\mathrm{CA}-\\mathrm{SR}}{\\mathrm{CA}}$ ?",
+   "back": "L'indice de sécurité : la baisse de CA supportable avant d'entrer en zone de perte. Plus il est élevé, moins le projet est risqué."
+  },
+  {
+   "id": "cefi2.p3-business-plan.indice-securite-lecture",
+   "chapter": "p3-business-plan",
+   "front": "Indice de sécurité de 37,5 % : que signifie-t-il ?",
+   "back": "Le CA peut baisser de 37,5 % avant d'entrer en zone de perte."
+  },
+  {
+   "id": "cefi2.p3-business-plan.point-mort-jours",
+   "chapter": "p3-business-plan",
+   "front": "Point mort en jours ?",
+   "back": "$\\dfrac{\\mathrm{SR}}{\\mathrm{CA}} \\times 360$ : date à laquelle le SR est atteint."
+  },
+  {
+   "id": "cefi2.p3-business-plan.sr-exemple",
+   "chapter": "p3-business-plan",
+   "front": "CA 28 000, CV 20 000, CF 5 000 : TMCV, SR, marge de sécurité ?",
+   "back": "TMCV = 8 000 / 28 000 = 28,57 % ; SR = 5 000 / 0,2857 = 17 500 € (17 543 si le taux est arrondi à 28,5 %) ; marge de sécurité 10 500 €, soit 37,5 %."
+  },
+  {
+   "id": "cefi2.p3-business-plan.sr-cf-lourds",
+   "chapter": "p3-business-plan",
+   "front": "Même exemple : investissement supplémentaire, CA +20 % (33 600) et CF +28 % (6 400). Effet ?",
+   "back": "Résultat 3 000 → 3 200 (↑), SR 17 500 → 22 400, indice de sécurité 37,5 % → 33,3 % (↓) : plus de coûts fixes rend le projet plus sensible à une baisse d'activité. Résultat ou sécurité : choix de stratégie et de tolérance au risque."
+  },
+  {
+   "id": "cefi2.p3-business-plan.cr-structure",
+   "chapter": "p3-business-plan",
+   "front": "Structure du compte de résultat prévisionnel simplifié ?",
+   "back": "CA − CV − CF décaissables − amortissements = REX ; − frais financiers = résultat avant IS ; − IS = résultat net ; + amortissements = CAF."
+  },
+  {
+   "id": "cefi2.p3-business-plan.cr-ca",
+   "chapter": "p3-business-plan",
+   "front": "Comment calculer le CA prévisionnel ?",
+   "back": "Nombre de clients × prix (+ frais de mise en service…)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.cr-amortissement",
+   "chapter": "p3-business-plan",
+   "front": "Amortissement annuel ?",
+   "back": "Investissement / durée d'amortissement."
+  },
+  {
+   "id": "cefi2.p3-business-plan.cr-is",
+   "chapter": "p3-business-plan",
+   "front": "Comment calculer l'IS du compte de résultat ?",
+   "back": "Résultat avant IS × taux d'IS, seulement si ce résultat est positif."
+  },
+  {
+   "id": "cefi2.p3-business-plan.caf-formule",
+   "chapter": "p3-business-plan",
+   "front": "CAF d'un projet ?",
+   "back": "$\\mathrm{CAF} = \\text{Résultat net} + \\text{Amortissements}$."
+  },
+  {
+   "id": "cefi2.p3-business-plan.caf-pourquoi",
+   "chapter": "p3-business-plan",
+   "front": "Pourquoi rajoute-t-on les amortissements pour obtenir la CAF ?",
+   "back": "Ce sont des charges non décaissables : elles réduisent le résultat (et l'impôt) sans sortie d'argent. La CAF est ce que le projet génère réellement en trésorerie."
+  },
+  {
+   "id": "cefi2.p3-business-plan.economies-flux",
+   "chapter": "p3-business-plan",
+   "front": "Flux d'un projet d'économies de coûts ?",
+   "back": "$F_n = (E_n - C_n - A_n)(1 - t) + A_n$ ($E_n$ économies de l'année, $C_n$ nouveaux coûts, $A_n$ amortissements, $t$ taux d'IS)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.economies-produits",
+   "chapter": "p3-business-plan",
+   "front": "Projet d'économies : que sont les « produits » et les « charges » ?",
+   "back": "Produits = économies réalisées par rapport à la situation actuelle ; charges = nouveaux coûts engendrés par le projet."
+  },
+  {
+   "id": "cefi2.p3-business-plan.economies-ajustements",
+   "chapter": "p3-business-plan",
+   "front": "Projet d'économies : ajustements après le calcul de $F_n$ ?",
+   "back": "Retirer les investissements (et variations de BFR) de l'année où ils sont engagés, et ajouter la valeur résiduelle en dernière année."
+  },
+  {
+   "id": "cefi2.p3-business-plan.pf-objet",
+   "chapter": "p3-business-plan",
+   "front": "Plan de financement : objet ?",
+   "back": "Vérifier que les ressources suffisent à couvrir les besoins chaque année, donc que la trésorerie reste positive."
+  },
+  {
+   "id": "cefi2.p3-business-plan.pf-ressources",
+   "chapter": "p3-business-plan",
+   "front": "Plan de financement : ressources ?",
+   "back": "Apports en capital (ressources propres), subventions, emprunts, CAF."
+  },
+  {
+   "id": "cefi2.p3-business-plan.pf-besoins",
+   "chapter": "p3-business-plan",
+   "front": "Plan de financement : besoins ?",
+   "back": "Investissements, variation du BFR, remboursements d'emprunt."
+  },
+  {
+   "id": "cefi2.p3-business-plan.pf-flux",
+   "chapter": "p3-business-plan",
+   "front": "Flux net de trésorerie et trésorerie cumulée ?",
+   "back": "Flux net = total ressources − total besoins ; trésorerie cumulée = somme des flux nets."
+  },
+  {
+   "id": "cefi2.p3-business-plan.pf-regle",
+   "chapter": "p3-business-plan",
+   "front": "Trésorerie cumulée négative une année : que faire ?",
+   "back": "Le projet n'est pas finançable tel quel : plus d'apports, un emprunt, une subvention, ou réduire les besoins."
+  },
+  {
+   "id": "cefi2.p3-business-plan.bfr-estimation",
+   "chapter": "p3-business-plan",
+   "front": "Comment estimer le BFR faute de connaître les encours ?",
+   "back": "En % du CA ou par la moyenne du secteur. Il varie avec le CA : seule sa variation annuelle est un besoin."
+  },
+  {
+   "id": "cefi2.p3-business-plan.bfr-services",
+   "chapter": "p3-business-plan",
+   "front": "BFR d'une prestation de services ?",
+   "back": "Coût d'une journée de travail (salaires chargés compris) × nombre de jours de la prestation avant facturation."
+  },
+  {
+   "id": "cefi2.p3-business-plan.re-capital",
+   "chapter": "p3-business-plan",
+   "front": "Capital économique ?",
+   "back": "$\\text{Capital économique} = \\text{Investissements} + \\mathrm{BFR}$."
+  },
+  {
+   "id": "cefi2.p3-business-plan.re-formule",
+   "chapter": "p3-business-plan",
+   "front": "Rentabilité économique ?",
+   "back": "$R_e = \\dfrac{\\mathrm{REX}}{\\text{Investissements} + \\mathrm{BFR}} = \\dfrac{\\mathrm{REX}}{\\mathrm{CA}} \\times \\dfrac{\\mathrm{CA}}{\\text{Capital éco.}}$ : marge opérationnelle × rotation de l'actif."
+  },
+  {
+   "id": "cefi2.p3-business-plan.re-marge",
+   "chapter": "p3-business-plan",
+   "front": "Dans $R_e$, que mesure la marge opérationnelle ?",
+   "back": "L'efficacité opérationnelle : maîtrise des coûts et niveau des revenus."
+  },
+  {
+   "id": "cefi2.p3-business-plan.re-rotation",
+   "chapter": "p3-business-plan",
+   "front": "Dans $R_e$, que mesure la rotation de l'actif économique ?",
+   "back": "La capacité à générer de l'activité avec les ressources investies ($\\mathrm{CA}/\\text{capital éco.}$). Une rotation faible signale un surdimensionnement."
+  },
+  {
+   "id": "cefi2.p3-business-plan.re-economies",
+   "chapter": "p3-business-plan",
+   "front": "$R_e$ d'un projet d'économies : que remplace-t-on ?",
+   "back": "Le CA est remplacé par les économies réalisées."
+  },
+  {
+   "id": "cefi2.p3-business-plan.re-leviers",
+   "chapter": "p3-business-plan",
+   "front": "Leviers pour améliorer $R_e$ ?",
+   "back": "Augmenter la marge (prix, coûts) ou la rotation (moins d'investissements, BFR réduit, pas de surdimensionnement)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.re-performance",
+   "chapter": "p3-business-plan",
+   "front": "Projets A et B dégagent 100 k€ chacun ; A a mobilisé 500 k€, B 1 000 k€. Lequel est le plus performant ?",
+   "back": "A, deux fois plus : un bénéfice se juge au regard des ressources mobilisées."
+  },
+  {
+   "id": "cefi2.p3-business-plan.re-exemple",
+   "chapter": "p3-business-plan",
+   "front": "Plateforme mutualisée (A) ou dédiée (B) : A marge 10 % et rotation 3, B marge 20 % et rotation 0,75. Lequel ?",
+   "back": "A : $R_e$ = 30 % contre 15 %. B a la meilleure marge, mais A utilise bien mieux ses ressources."
+  },
+  {
+   "id": "cefi2.p3-business-plan.ex-sr-clients",
+   "chapter": "p3-business-plan",
+   "front": "Contrôle qualité par IA : CF 560 k€, abonnement 15 000 €, CV 3 000 € par client. SR ?",
+   "back": "MCV unitaire 12 000 € (TMCV 80 %) ; SR = 560 / 0,8 = 700 k€, soit 560 / 12 = 46,7 → 47 clients."
+  },
+  {
+   "id": "cefi2.p3-business-plan.ex-financement",
+   "chapter": "p3-business-plan",
+   "front": "Rentable mais pas finançable : exemple du cours ?",
+   "back": "Contrôle qualité par IA : bénéfice dès l'an 2 mais trésorerie cumulée de −430 k€ au pire moment ; il faut un emprunt ou une levée de fonds d'au moins 450 k€, ou réduire les besoins."
+  },
+  {
+   "id": "cefi2.p3-business-plan.ex-client-supplementaire",
+   "chapter": "p3-business-plan",
+   "front": "Abonnement de 1 800 € : un client supplémentaire rapporte-t-il 1 800 € ?",
+   "back": "Non : sa MCV, environ 1 400 € (cloud, commission et frais de paiement sont dus pour chaque client)."
+  },
+  {
+   "id": "cefi2.p3-business-plan.rentab-financement-tresorerie",
+   "chapter": "p3-business-plan",
+   "front": "Rentabilité, financement, trésorerie : quelles questions ?",
+   "back": "Rentabilité : plus de valeur créée que de coût (VAN, IP) ? Financement : d'où vient l'argent pour lancer ? Trésorerie : assez de liquidités à chaque instant ? Un projet rentable peut échouer faute de financement."
+  },
+  {
+   "id": "cefi2.p3-business-plan.van-previsions",
+   "chapter": "p3-business-plan",
+   "front": "VAN > 0 garantit-elle la rentabilité ? Un DR court garantit-il l'absence de risque ?",
+   "back": "Non aux deux : la VAN repose sur des prévisions (clients, prix). Le DR ignore l'incertitude, la concurrence, l'obsolescence et les flux après récupération."
+  },
+  {
+   "id": "cefi2.p3-business-plan.ex-cloud-dedie",
+   "chapter": "p3-business-plan",
+   "front": "Cloud public (A) ou infrastructure dédiée (B) : à partir de quel volume B est-elle moins chère ?",
+   "back": "RUN B ($122 + 0{,}14\\,n$) < RUN A ($80 + 0{,}5\\,n$) dès $n > 42/0{,}36 \\approx 117$ bâtiments. Sur 5 ans : TCO A 1 140 k€, B 1 068,4 k€ ; B demande 100 k€ de BUILD en plus."
+  },
+  {
+   "id": "cefi2.pieges.build-run",
+   "chapter": "pieges",
+   "front": "BUILD ou RUN : comment classer un coût payé une seule fois, et un coût qui revient ?",
+   "back": "Payé une fois au lancement (serveurs, installation, configuration, développement, formation) = BUILD. Ce qui revient chaque année ou chaque mois = RUN."
+  },
+  {
+   "id": "cefi2.pieges.mensuel-x12",
+   "chapter": "pieges",
+   "front": "Piège sur les coûts mensuels dans le RUN ?",
+   "back": "Ne pas oublier de les multiplier par 12."
+  },
+  {
+   "id": "cefi2.pieges.fixe-variable",
+   "chapter": "pieges",
+   "front": "Un coût « par utilisateur », « par requête » ou « par client » : fixe ou variable ? Et un abonnement forfaitaire ?",
+   "back": "Variable. Un abonnement forfaitaire est fixe, même payé chaque mois."
+  },
+  {
+   "id": "cefi2.pieges.amortissement-double-compte",
+   "chapter": "pieges",
+   "front": "Piège : investissement et amortissement dans un flux de trésorerie ?",
+   "back": "L'amortissement est non décaissé : il baisse l'IS mais on le rajoute au flux. Ne pas compter l'investissement deux fois (investissement + amortissement)."
+  },
+  {
+   "id": "cefi2.pieges.formation",
+   "chapter": "pieges",
+   "front": "Formation : comment la traiter ?",
+   "back": "Souvent en charge immédiate (non amortissable) : elle diminue le résultat de l'année 0 et génère une économie d'IS."
+  },
+  {
+   "id": "cefi2.pieges.investissement-periode",
+   "chapter": "pieges",
+   "front": "Investissement engagé en cours de période : quand sort-il de la trésorerie ?",
+   "back": "L'année où il est engagé (début d'année 4 = flux de l'année 4 ou de fin d'année 3 selon la convention de l'énoncé : préciser son choix) ; son amortissement commence alors."
+  },
+  {
+   "id": "cefi2.pieges.vr-is",
+   "chapter": "pieges",
+   "front": "Valeur résiduelle, énoncé avec IS, bien totalement amorti ?",
+   "back": "La plus-value est en principe imposable : $\\mathrm{VR} \\times (1 - t)$. À défaut de précision, indiquer l'hypothèse retenue."
+  },
+  {
+   "id": "cefi2.pieges.bfr-variation",
+   "chapter": "pieges",
+   "front": "BFR dans les flux de trésorerie ?",
+   "back": "Seule la variation du BFR est un besoin de l'année ; il est en principe récupéré en fin de projet."
+  },
+  {
+   "id": "cefi2.pieges.economies-recettes",
+   "chapter": "pieges",
+   "front": "Exercice à économies de coûts : que sont les « recettes » ?",
+   "back": "Coûts de la situation actuelle − coûts de la nouvelle situation."
+  },
+  {
+   "id": "cefi2.pieges.convention-economies",
+   "chapter": "pieges",
+   "front": "Convention du corrigé pour les projets d'économies ?",
+   "back": "Flux = (économies − nouveaux coûts − amortissements) × (1 − 25 %) + amortissements ; une économie négative génère une économie d'IS."
+  },
+  {
+   "id": "cefi2.pieges.arrondis",
+   "chapter": "pieges",
+   "front": "Précision des coefficients d'actualisation ?",
+   "back": "Garder au moins 4 décimales (ex. $1{,}08^{-3} = 0{,}7938$)."
+  },
+  {
+   "id": "cefi2.pieges.hypothese-enonce",
+   "chapter": "pieges",
+   "front": "Énoncé ambigu : que faire ?",
+   "back": "Indiquer l'hypothèse retenue."
+  },
+  {
+   "id": "cefi2.pieges.dr-vs-vie",
+   "chapter": "pieges",
+   "front": "Piège : comparer le DR à quoi ?",
+   "back": "À la durée de vie économique du projet (ou à la norme interne), pas à zéro."
+  }
+ ]
+}
