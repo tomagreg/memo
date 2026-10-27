@@ -1,0 +1,22 @@
+# Unité systemd de memo, sur le modèle de shoals.service.
+# Installée par deploy.sh dans /etc/systemd/system/memo.service sur le LXC « web ».
+# Écoute uniquement sur l'IP Tailscale du LXC (pas sur 192.168.1.68).
+# Port 5005 : 5004 est pris par Synapse.
+[Unit]
+Description=Memo - cartes mémo
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/memo
+Environment=MEMO_HOST=100.67.37.21
+Environment=MEMO_PORT=5005
+Environment=MEMO_DB=/root/memo/data/memo.db
+ExecStart=/root/memo/venv/bin/python /root/memo/app.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
