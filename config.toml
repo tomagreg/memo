@@ -1,5 +1,8 @@
 session_good_answers = 3
 sessions_to_acquire = 2
 max_cards_per_session = 15
-new_per_session = 5
+ratio_new = 0.70
+ratio_acquired = 0.15
+ratio_validated = 0.05
+ratio_learning = 0.10
 retry_offset = 3

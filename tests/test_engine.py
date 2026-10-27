@@ -8,7 +8,8 @@ from engine import (ACQUIRED, LEARNING, NEW, VALIDATED, apply_answer,
                     compute_status, new_queue, select_cards)
 
 CFG = dict(session_good_answers=3, sessions_to_acquire=2, max_cards_per_session=15,
-           new_per_session=5, retry_offset=3)
+           ratio_new=0.70, ratio_acquired=0.15, ratio_validated=0.05, ratio_learning=0.10,
+           retry_offset=3)
 
 
 def test_three_good_answers_validate():
@@ -46,24 +47,54 @@ def cards(n_new=0, n_learning=0, n_validated=0, n_acquired=0):
     return out
 
 
-def test_caps_15_cards_and_5_new():
-    ids = select_cards(cards(n_new=30), CFG, False, random.Random(0))
-    assert len(ids) == 5
-    ids = select_cards(cards(n_new=30, n_learning=20), CFG, False, random.Random(0))
+def count(ids, status):
+    return sum(i.startswith(status) for i in ids)
+
+
+def test_mix_70_15_5_10():
+    pool = cards(n_new=40, n_learning=10, n_validated=10, n_acquired=10)
+    ids = select_cards(pool, CFG, False, random.Random(0))
     assert len(ids) == 15 and len(set(ids)) == 15
-    assert sum(i.startswith(NEW) for i in ids) == 0
-    ids = select_cards(cards(n_new=30, n_learning=8, n_validated=4), CFG, False, random.Random(0))
-    assert len(ids) == 15 and sum(i.startswith(NEW) for i in ids) == 3
+    assert (count(ids, NEW), count(ids, ACQUIRED), count(ids, VALIDATED), count(ids, LEARNING)) == (11, 2, 1, 1)  # 10,5 nouvelles arrondi au plus fort reste
 
 
-def test_priority_and_acquired_option():
-    pool = cards(n_new=3, n_learning=3, n_validated=2, n_acquired=4)
+def test_short_category_is_backfilled():
+    ids = select_cards(cards(n_new=30), CFG, False, random.Random(0))
+    assert len(ids) == 15 and count(ids, NEW) == 15
+    ids = select_cards(cards(n_new=3, n_learning=3, n_validated=2, n_acquired=4), CFG, False, random.Random(1))
+    # quotas 10/2/1/2 : nouvelles 3 (toutes), acquises 2, puis le reste complété par apprentissage et validées
+    assert len(ids) == 10
+    assert (count(ids, NEW), count(ids, ACQUIRED), count(ids, VALIDATED), count(ids, LEARNING)) == (3, 2, 2, 3)
+
+
+def test_most_missed_learning_first_and_acquired_backfill_option():
+    pool = cards(n_learning=5, n_acquired=12)
     ids = select_cards(pool, CFG, False, random.Random(1))
-    assert len(ids) == 8
-    assert ids[:3] == ["en_apprentissage2", "en_apprentissage1", "en_apprentissage0"]  # plus ratées d'abord
-    assert not any(i.startswith(ACQUIRED) for i in ids)
+    # pas de nouvelles : l'apprentissage complète (5), les acquises restent à leur quota (2)
+    assert count(ids, LEARNING) == 5 and count(ids, ACQUIRED) == 2 and len(ids) == 7
+    ids = select_cards(cards(n_learning=30), CFG, False, random.Random(1))
+    assert ids[:2] == ["en_apprentissage29", "en_apprentissage28"]  # plus ratées d'abord
     ids = select_cards(pool, CFG, True, random.Random(1))
-    assert len(ids) == 12 and all(i.startswith(ACQUIRED) for i in ids[8:])
+    assert len(ids) == 15
+
+
+def test_validated_card_needs_one_good_answer_if_first_try():
+    q = new_queue(["a", "b"], easy_ids=["a"])
+    q, ev = apply_answer(q, "a", True, CFG)
+    assert ev == "validated" and q["queue"] == ["b"]
+    q = new_queue(["a", "b"], easy_ids=["a"])
+    q, _ = apply_answer(q, "a", False, CFG)  # ratée : retour à la règle des 3 bonnes réponses
+    assert q["missed"] == ["a"]
+    for _ in range(2):
+        q, ev = apply_answer(q, "a" if q["queue"][0] == "a" else q["queue"][0], True, CFG)
+    assert "a" not in q["validated"]
+
+
+def test_replay_matches_one_answer_rule():
+    assert compute_status([(1, True)] * 3 + [(2, True)], CFG) == ACQUIRED
+    assert compute_status([(1, True)] * 3 + [(2, False), (2, True)], CFG) == VALIDATED
+    assert compute_status([(1, True)] * 3 + [(2, False)] + [(2, True)] * 3, CFG) == ACQUIRED
+    assert compute_status([(1, True)], CFG) == "en_apprentissage"
 
 
 def test_failed_card_reinserted_at_offset():

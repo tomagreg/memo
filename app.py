@@ -100,7 +100,8 @@ def api_start():
             return error("aucune carte à réviser avec ces critères", 409)
         now = db.now()
         conn.execute("UPDATE sessions SET ended_at=?, end_reason='superseded' WHERE ended_at IS NULL", (now,))
-        queue = engine.new_queue(ids)
+        easy = [c["id"] for c in states if c["status"] == engine.VALIDATED]
+        queue = engine.new_queue(ids, easy)
         queue["total"] = len(ids)
         cur = conn.execute("INSERT INTO sessions(started_at, chapters, include_acquired, queue) VALUES (?,?,?,?)",
                            (now, json.dumps(chapters), int(include_acquired), json.dumps(queue)))
