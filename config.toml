@@ -1,4 +1,4 @@
-session_good_answers = 3
+session_good_answers = 2
 sessions_to_acquire = 2
 max_cards_per_session = 15
 ratio_new = 0.70

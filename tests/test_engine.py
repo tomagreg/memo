@@ -7,37 +7,37 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from engine import (ACQUIRED, LEARNING, NEW, VALIDATED, apply_answer,
                     compute_status, new_queue, select_cards)
 
-CFG = dict(session_good_answers=3, sessions_to_acquire=2, max_cards_per_session=15,
+CFG = dict(session_good_answers=2, sessions_to_acquire=2, max_cards_per_session=15,
            ratio_new=0.70, ratio_acquired=0.15, ratio_validated=0.05, ratio_learning=0.10,
            retry_offset=3)
 
 
-def test_three_good_answers_validate():
+def test_two_good_answers_validate():
     assert compute_status([], CFG) == NEW
-    assert compute_status([(1, True), (1, True)], CFG) == LEARNING
-    assert compute_status([(1, True)] * 3, CFG) == VALIDATED
+    assert compute_status([(1, True)], CFG) == LEARNING
+    assert compute_status([(1, True)] * 2, CFG) == VALIDATED
 
 
 def test_error_resets_counter():
-    assert compute_status([(1, True), (1, True), (1, False), (1, True)], CFG) == LEARNING
-    assert compute_status([(1, True), (1, True), (1, False)] + [(1, True)] * 3, CFG) == VALIDATED
+    assert compute_status([(1, True), (1, False), (1, True)], CFG) == LEARNING
+    assert compute_status([(1, True), (1, False)] + [(1, True)] * 2, CFG) == VALIDATED
 
 
 def test_two_sessions_acquire():
-    assert compute_status([(1, True)] * 3 + [(2, True)] * 3, CFG) == ACQUIRED
+    assert compute_status([(1, True)] * 2 + [(2, True)] * 2, CFG) == ACQUIRED
     # deux séries dans la même session ne comptent qu'une validation
-    assert compute_status([(1, True)] * 3 + [(1, False)] + [(1, True)] * 3, CFG) == VALIDATED
+    assert compute_status([(1, True)] * 2 + [(1, False)] + [(1, True)] * 2, CFG) == VALIDATED
 
 
 def test_acquired_card_demoted_on_error():
-    base = [(1, True)] * 3 + [(2, True)] * 3
+    base = [(1, True)] * 2 + [(2, True)] * 2
     assert compute_status(base + [(3, False)], CFG) == LEARNING
     # il faut de nouveau 2 sessions
-    assert compute_status(base + [(3, False)] + [(3, True)] * 3, CFG) == VALIDATED
+    assert compute_status(base + [(3, False)] + [(3, True)] * 2, CFG) == VALIDATED
 
 
 def test_error_on_once_validated_keeps_validation():
-    assert compute_status([(1, True)] * 3 + [(2, False)], CFG) == VALIDATED
+    assert compute_status([(1, True)] * 2 + [(2, False)], CFG) == VALIDATED
 
 
 def cards(n_new=0, n_learning=0, n_validated=0, n_acquired=0):
@@ -82,18 +82,28 @@ def test_validated_card_needs_one_good_answer_if_first_try():
     q = new_queue(["a", "b"], easy_ids=["a"])
     q, ev = apply_answer(q, "a", True, CFG)
     assert ev == "validated" and q["queue"] == ["b"]
-    q = new_queue(["a", "b"], easy_ids=["a"])
-    q, _ = apply_answer(q, "a", False, CFG)  # ratée : retour à la règle des 3 bonnes réponses
-    assert q["missed"] == ["a"]
-    for _ in range(2):
-        q, ev = apply_answer(q, "a" if q["queue"][0] == "a" else q["queue"][0], True, CFG)
-    assert "a" not in q["validated"]
+    q = new_queue(["a"], easy_ids=["a"])
+    q, _ = apply_answer(q, "a", False, CFG)  # ratée : retour à la règle des 2 bonnes réponses consécutives
+    q, ev = apply_answer(q, "a", True, CFG)
+    assert ev is None and q["validated"] == []
+    q, ev = apply_answer(q, "a", True, CFG)
+    assert ev == "validated"
+
+
+def test_consecutive_required_in_queue():
+    q = new_queue(["a"])
+    q, _ = apply_answer(q, "a", True, CFG)
+    q, _ = apply_answer(q, "a", False, CFG)  # l'erreur remet le compteur à zéro
+    q, ev = apply_answer(q, "a", True, CFG)
+    assert ev is None
+    q, ev = apply_answer(q, "a", True, CFG)
+    assert ev == "validated"
 
 
 def test_replay_matches_one_answer_rule():
-    assert compute_status([(1, True)] * 3 + [(2, True)], CFG) == ACQUIRED
-    assert compute_status([(1, True)] * 3 + [(2, False), (2, True)], CFG) == VALIDATED
-    assert compute_status([(1, True)] * 3 + [(2, False)] + [(2, True)] * 3, CFG) == ACQUIRED
+    assert compute_status([(1, True)] * 2 + [(2, True)], CFG) == ACQUIRED
+    assert compute_status([(1, True)] * 2 + [(2, False), (2, True)], CFG) == VALIDATED
+    assert compute_status([(1, True)] * 2 + [(2, False)] + [(2, True)] * 2, CFG) == ACQUIRED
     assert compute_status([(1, True)], CFG) == "en_apprentissage"
 
 
@@ -109,8 +119,6 @@ def test_good_answer_goes_to_end_then_validates():
     q = new_queue(list("ab"))
     q, e1 = apply_answer(q, "a", True, CFG)
     assert q["queue"] == list("ba") and e1 is None
-    q, _ = apply_answer(q, "b", True, CFG)
-    q, _ = apply_answer(q, "a", True, CFG)
     q, _ = apply_answer(q, "b", True, CFG)
     q, event = apply_answer(q, "a", True, CFG)
     assert event == "validated" and q["validated"] == ["a"] and q["queue"] == ["b"]
